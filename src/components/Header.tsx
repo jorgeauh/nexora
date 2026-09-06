@@ -30,9 +30,10 @@ export function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-secondary transition-colors duration-200 hover:text-foreground"
+              className="group relative text-sm text-secondary transition-colors duration-200 hover:text-foreground"
             >
               {link.label}
+              <span className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-accent transition-transform duration-200 ease-out group-hover:scale-x-100" />
             </a>
           ))}
         </nav>
@@ -40,7 +41,7 @@ export function Header() {
         <div className="hidden items-center gap-4 md:flex">
           <a
             href="#contacto"
-            className="inline-flex items-center gap-1.5 rounded-sm bg-primary px-4 py-2 text-sm font-medium text-on-primary transition-colors duration-200 hover:bg-secondary cursor-pointer"
+            className="inline-flex items-center gap-1.5 rounded-sm bg-primary px-4 py-2 text-sm font-medium text-on-primary transition-all duration-200 hover:bg-secondary hover:scale-[1.03] active:scale-[0.97] cursor-pointer"
           >
             Agenda diagnóstico
             <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2} />
@@ -61,7 +62,7 @@ export function Header() {
       {open && (
         <nav
           id="mobile-nav"
-          className="border-t border-border bg-background px-4 pb-6 pt-2 md:hidden"
+          className="animate-fade-in-up border-t border-border bg-background px-4 pb-6 pt-2 md:hidden"
           aria-label="Navegación móvil"
         >
           <ul className="flex flex-col">

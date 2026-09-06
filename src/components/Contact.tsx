@@ -1,6 +1,7 @@
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 import { CalendlyButton } from "@/components/CalendlyButton";
+import { Reveal } from "@/components/Reveal";
 
 const INFO = [
   { icon: MapPin, label: "Oficina", value: "Av. Insurgentes Sur 1602, CDMX, México" },
@@ -14,7 +15,7 @@ export function Contact() {
     <section id="contacto" className="py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
-          <div>
+          <Reveal>
             <p className="text-xs font-semibold uppercase tracking-wide text-accent">Contacto</p>
             <h2 className="text-balance mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
               Empecemos con un diagnóstico
@@ -26,9 +27,12 @@ export function Contact() {
 
             <dl className="mt-9 space-y-5">
               {INFO.map(({ icon: Icon, label, value }) => (
-                <div key={label} className="flex items-start gap-3.5">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-sm bg-muted">
-                    <Icon className="h-4.5 w-4.5 text-primary" strokeWidth={1.5} />
+                <div key={label} className="group flex items-start gap-3.5">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-sm bg-muted transition-colors duration-300 group-hover:bg-primary">
+                    <Icon
+                      className="h-4.5 w-4.5 text-primary transition-colors duration-300 group-hover:text-on-primary"
+                      strokeWidth={1.5}
+                    />
                   </span>
                   <div>
                     <dt className="text-xs text-muted-foreground">{label}</dt>
@@ -41,11 +45,11 @@ export function Contact() {
             <div className="mt-8">
               <CalendlyButton />
             </div>
-          </div>
+          </Reveal>
 
-          <div className="rounded-lg border border-border bg-surface p-6 sm:p-8">
+          <Reveal delay={150} className="rounded-lg border border-border bg-surface p-6 sm:p-8">
             <ContactForm />
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

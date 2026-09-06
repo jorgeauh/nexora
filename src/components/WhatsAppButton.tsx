@@ -23,7 +23,7 @@ export function WhatsAppButton() {
         <div
           role="dialog"
           aria-label="Ventana de atención por WhatsApp"
-          className="w-72 overflow-hidden rounded-lg border border-border bg-surface shadow-[0_8px_24px_rgba(15,23,42,0.12)] sm:w-80"
+          className="animate-fade-in-up w-72 overflow-hidden rounded-lg border border-border bg-surface shadow-[0_8px_24px_rgba(15,23,42,0.12)] sm:w-80"
         >
           <div className="flex items-center justify-between bg-[#075E54] px-4 py-3">
             <div className="flex items-center gap-2.5">
