@@ -20,7 +20,7 @@ export function Hero() {
         sizes="100vw"
         className="object-cover object-[center_35%]"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/60" />
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/45 to-primary/30" />
       <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent" />
 
       <div className="relative mx-auto grid max-w-6xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-8 lg:py-28 lg:px-8">
