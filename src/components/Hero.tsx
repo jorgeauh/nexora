@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowRight, ShieldCheck } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { Counter } from "@/components/Counter";
@@ -69,25 +70,41 @@ export function Hero() {
           </Reveal>
         </div>
 
-        <Reveal delay={200} className="relative rounded-lg border border-border bg-surface p-6 shadow-[0_1px_2px_rgba(15,23,42,0.04)] transition-shadow duration-300 hover:shadow-[0_8px_24px_rgba(15,23,42,0.08)] sm:p-8">
-          <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
-            Diagnóstico exprés — semana 1
-          </p>
-          <ul className="mt-5 space-y-4">
-            {[
-              ["Flujo de caja", "Mapa de entradas/salidas y semanas de colchón"],
-              ["Estructura comercial", "Embudo, ticket promedio y tasa de cierre"],
-              ["Costos operativos", "Fugas identificadas y prioridad de ahorro"],
-            ].map(([title, desc]) => (
-              <li key={title} className="flex gap-3 border-b border-border pb-4 last:border-0 last:pb-0">
-                <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                <div>
-                  <p className="text-sm font-medium text-foreground">{title}</p>
-                  <p className="mt-0.5 text-sm text-muted-foreground">{desc}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
+        <Reveal delay={200} className="pb-10 lg:pb-16">
+          <div className="relative">
+            <div className="overflow-hidden rounded-lg border border-border shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
+              <Image
+                src="/img/GettyImages-2184924844.webp"
+                alt="Equipo de Nexora Business revisando indicadores financieros con un cliente en sala de juntas"
+                width={1440}
+                height={560}
+                priority
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                className="h-56 w-full object-cover sm:h-72 lg:h-[380px]"
+              />
+            </div>
+
+            <div className="relative z-10 -mt-10 mx-4 rounded-lg border border-border bg-surface p-6 shadow-[0_8px_24px_rgba(15,23,42,0.1)] transition-shadow duration-300 hover:shadow-[0_14px_32px_rgba(15,23,42,0.14)] sm:p-7 lg:absolute lg:-bottom-8 lg:-left-6 lg:mx-0 lg:mt-0 lg:w-[75%]">
+              <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                Diagnóstico exprés — semana 1
+              </p>
+              <ul className="mt-5 space-y-4">
+                {[
+                  ["Flujo de caja", "Mapa de entradas/salidas y semanas de colchón"],
+                  ["Estructura comercial", "Embudo, ticket promedio y tasa de cierre"],
+                  ["Costos operativos", "Fugas identificadas y prioridad de ahorro"],
+                ].map(([title, desc]) => (
+                  <li key={title} className="flex gap-3 border-b border-border pb-4 last:border-0 last:pb-0">
+                    <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                    <div>
+                      <p className="text-sm font-medium text-foreground">{title}</p>
+                      <p className="mt-0.5 text-sm text-muted-foreground">{desc}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </Reveal>
       </div>
     </section>
